@@ -6,7 +6,7 @@ describe("tests for record", function(){
     var record;
 
     beforeEach(function(){
-        record = new Record("Queens of the Stone Age", "Songs for the Deaf", "Rock", 2000);
+        record = new Record("Queens of the Stone Age", "Songs for the Deaf", "Rock", 1999);
     });
 
     it("should access artist", function(){
@@ -22,6 +22,10 @@ describe("tests for record", function(){
     });
 
     it("should access price", function(){
-        assert.strictEqual(record.price, 2000);
+        assert.strictEqual(record.price, 1999);
+    });
+
+    it("should return a record details pitch", function(){
+        assert.strictEqual(record.printDetails(), "Queens of the Stone Age released a great album called Songs for the Deaf, a classic Rock genre selling for £19.99");
     });
 });

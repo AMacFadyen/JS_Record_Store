@@ -9,4 +9,8 @@ RecordStore.prototype.add = function (record) {
         this.inventory.unshift(record);
 };
 
+RecordStore.prototype.printRecordDetails = function (record) {
+    return record.printDetails();
+};
+
 module.exports = RecordStore;
