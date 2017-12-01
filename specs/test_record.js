@@ -9,19 +9,19 @@ describe("tests for record", function(){
         record = new Record("Queens of the Stone Age", "Songs for the Deaf", "Rock", 2000);
     });
 
-    xit("should access artist", function(){
+    it("should access artist", function(){
         assert.strictEqual(record.artist, "Queens of the Stone Age");
     });
 
-    xit("should access title", function(){
+    it("should access title", function(){
         assert.strictEqual(record.title, "Songs for the Deaf");
     });
 
-    xit("should access genre", function(){
+    it("should access genre", function(){
         assert.strictEqual(record.genre, "Rock");
     });
 
-    xit("should access price", function(){
+    it("should access price", function(){
         assert.strictEqual(record.price, 2000);
     });
 });
