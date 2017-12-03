@@ -33,4 +33,16 @@ describe("tests for Record Store", function(){
         store.add(record1);
         assert.strictEqual(store.printRecordDetails(store.inventory[0]), "Queens of the Stone Age released a great album called Songs for the Deaf, a classic Rock genre selling for £10");
     });
+
+    xit("should list inventory", function(){
+        store.add(record1);
+        assert.strictEqual(store.listInventory(), [record1]);
+    });
+
+    it("should remove record from store inventory and adjust store balance", function(){
+        store.add(record1);
+        store.add(record2);
+        store.sellRecord(record1);
+        assert.strictEqual(store.balance, 11000);
+    });
 });

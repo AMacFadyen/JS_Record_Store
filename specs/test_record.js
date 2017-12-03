@@ -28,4 +28,5 @@ describe("tests for record", function(){
     it("should return a record details pitch", function(){
         assert.strictEqual(record.printDetails(), "Queens of the Stone Age released a great album called Songs for the Deaf, a classic Rock genre selling for £19.99");
     });
+
 });
