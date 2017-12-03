@@ -44,5 +44,12 @@ describe("tests for Record Store", function(){
         store.add(record2);
         store.sellRecord(record1);
         assert.strictEqual(store.balance, 11000);
+        assert.strictEqual(store.inventory.length, 1);
     });
+
+    xit("should return financial statment of inventory", function(){
+        store.add(record1);
+        store.add(record2);
+        assert.strictEqual(store.financialStatment, "Current Balance: £100.00, Current Inventory Value: £17.00")
+    })
 });

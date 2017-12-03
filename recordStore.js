@@ -23,6 +23,8 @@ RecordStore.prototype.sellRecord = function (record, index) {
     this.balance+= record.price;
 };
 
+RecordStore.prototype.methodName = function () {
 
+};
 
 module.exports = RecordStore;
