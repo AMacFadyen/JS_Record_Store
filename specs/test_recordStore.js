@@ -3,12 +3,14 @@ var RecordStore = require("../recordStore.js");
 var Record = require("../record.js");
 
 describe("tests for Record Store", function(){
-    var store, record1, record2;
+    var store, record1, record2, record3;
 
     beforeEach(function(){
         record1 = new Record("Queens of the Stone Age", "Songs for the Deaf", "Rock", 1000);
         record2 = new Record("AC/DC", "Back in Black", "Rock", 700);
+        record3 = new Record("The Killers", "Sam's Town", "Indie Rock", 800);
         store = new RecordStore("Metal-Ricks", "Glasgow", 10000);
+
     });
 
     it("should be able to access name", function(){
@@ -34,9 +36,9 @@ describe("tests for Record Store", function(){
         assert.strictEqual(store.printRecordDetails(store.inventory[0]), "Queens of the Stone Age released a great album called Songs for the Deaf, a classic Rock genre selling for £10");
     });
 
-    xit("should list inventory", function(){
+    it("should list inventory", function(){
         store.add(record1);
-        assert.strictEqual(store.listInventory(), [record1]);
+        assert.strictEqual(store.listInventory(), true);
     });
 
     it("should remove record from store inventory and adjust store balance", function(){
@@ -52,4 +54,11 @@ describe("tests for Record Store", function(){
         store.add(record2);
         assert.strictEqual(store.financialStatment(), "Current Balance: £100, Current Inventory Value: £17");
     });
+
+    it("should return all records by genre", function(){
+        store.add(record1);
+        store.add(record2);
+        store.add(record3);
+        assert.strictEqual(store.findByGenre("Rock"), true);
+    })
 });
